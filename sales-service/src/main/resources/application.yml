@@ -1,0 +1,17 @@
+server:
+ port: 8991
+spring:
+ application:
+  name: SALES-SERVICE
+ config:
+  import: optional:configserver:http://localhost:8111 
+eureka:
+ instance:
+  client:
+   serviceUrl:
+    defaultZone: http://localhost:8761/eureka/ 
+management:
+ endpoints: 
+  web.exposure:
+   include: "*"    
+
