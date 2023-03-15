@@ -1,0 +1,23 @@
+spring:
+ application:
+  name: config-service
+ cloud:
+  config:
+   server:
+    git:
+     uri: https://github.com/fajarhening/microservices-cloud-config.git
+     skipSslValidation: true
+     clone-on-start: true
+server:
+ port: 8111
+management:
+ endpoints: 
+  web.exposure:
+   include: "*"    
+eureka:
+ instance:
+  client:
+   serviceUrl:
+    defaultZone: http://localhost:8761/eureka/ 
+   
+
